@@ -1,8 +1,8 @@
 var path = require('path');
-
+var webpack = require('webpack');
 module.exports = {
   cache: true,
-  entry: './src/scripts/main.js',
+  entry: './src/scripts/main.jsx',
   output: {
     path: path.join(__dirname, 'dist', 'scripts'),
     publicPath: 'scripts/',
@@ -10,10 +10,12 @@ module.exports = {
   },
   module: {
     loaders: [
-      { test: /\.css$/, loader: 'style!css' },
-      { test: /\.scss$/, loader: 'style!sass' },
-      { test: /\.jsx?/, loader: 'jsx' }
+      { test: /\.css$/, loader: 'style-loader' },
+      { test: /\.jsx?/, loader: 'jsx-loader' }
     ]
   },
-  plugins: []
+  plugins: [],
+  devServer: {
+    contentBase: ['./dist/', './public'],
+  },
 };

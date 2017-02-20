@@ -1,20 +1,19 @@
-/** @jsx React.DOM */
-
 var React = require('react');
-var AceEditor  = require('react-ace');
+var ReactDom = require('react-dom');
+var AceEditor  = require('react-ace').default;
 
 var onChange = function(obj) {
-  console.log(obj);
+  console.log(obj+ "foo");
 };
 // render a first
-React.render(
-  <AceEditor
+ReactDom.render(
+  <div className="App"><AceEditor
     mode="java"
     theme="github"
     name="blah1"
     height="6em"
     onChange={onChange}
-    />,
+    /></div>,
   document.getElementById('foo')
 );
 
