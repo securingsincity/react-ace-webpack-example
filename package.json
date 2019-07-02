@@ -3,22 +3,27 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "start": "webpack-dev-server --content-base src"
+    "start": "webpack-dev-server"
   },
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "css-loader": "^0.9.1",
+    "@types/react": "^16.8.22",
+    "@types/react-dom": "^16.8.4",
+    "css-loader": "^3.0.0",
     "jsx-loader": "^0.13.2",
-    "sass-loader": "^0.4.1",
-    "style-loader": "^0.8.3",
-    "webpack": "^2.2.1",
-    "webpack-dev-middleware": "^1.10.0",
-    "webpack-dev-server": "^2.3.0"
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "ts-loader": "^6.0.4",
+    "typescript": "^3.5.2",
+    "webpack": "^4.35.2",
+    "webpack-cli": "^3.3.5",
+    "webpack-dev-middleware": "^3.7.0",
+    "webpack-dev-server": "^3.7.2"
   },
   "dependencies": {
-    "react": "^15.0.2",
-    "react-ace": "^4.1.6",
-    "react-dom": "^15.4.2"
+    "react": "^16.8.6",
+    "react-ace": "^7.0.2",
+    "react-dom": "^16.8.6"
   }
 }

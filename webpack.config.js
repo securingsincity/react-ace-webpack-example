@@ -2,20 +2,24 @@ var path = require('path');
 var webpack = require('webpack');
 module.exports = {
   cache: true,
-  entry: './src/scripts/main.jsx',
+  entry: './src/scripts/main.tsx',
   output: {
-    path: path.join(__dirname, 'dist', 'scripts'),
     publicPath: 'scripts/',
+    path: path.resolve(__dirname, 'dist/scripts'),
     filename: 'bundle.js'
   },
   module: {
-    loaders: [
-      { test: /\.css$/, loader: 'style-loader' },
-      { test: /\.jsx?/, loader: 'jsx-loader' }
+    rules: [
+      { test: /\.css$/, use: ['style-loader'] },
+      { test: /\.tsx?/, use: ['ts-loader'] }
     ]
   },
   plugins: [],
   devServer: {
-    contentBase: ['./dist/', './public'],
+    contentBase: [path.join(__dirname, 'public'), path.join(__dirname, 'dist')],
+    port: 9000,
   },
+  resolve: {
+    extensions: [".jsx", ".js", ".tsx", ".ts"]
+  }
 };
